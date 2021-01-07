@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src='./what is this.js'></script>
+    <!-- <script src='./what is this.js'></script> -->
 </head>
+
 <body>
-    
+    <div id="parent" style="width: 100px;height:100px;background-color: aqua;">
+        <div id="child1" style="width: 50px;height:50px;background-color: red;"></div>
+        <div id="child2" style="width: 50px;height:50px;background-color: blue;"></div>
+    </div>
 </body>
+<script>
+    // 事件冒泡和事件捕获
+    let parent = document.getElementById('parent')
+    let child1 = document.getElementById('child1')
+    let child2 = document.getElementById('child2')
+
+    function handler(e) {
+        console.log(e.target.id)
+    }
+    parent.addEventListener('click', () => {
+        console.log('parent')
+    }, true)
+    child1.addEventListener('click', () => {
+        console.log('child1')
+    })
+    child2.addEventListener('click', () => {
+        console.log('child2')
+    })
+</script>
+
 </html>

@@ -5,3 +5,8 @@ for (var i = 0; i < 5; i++) {
         }, j * 1000)
     })(i)
 }
+for (let index = 0; index < 5; index++) {
+    setTimeout(() => {
+        console.log(index)
+    }, 1000)
+}
