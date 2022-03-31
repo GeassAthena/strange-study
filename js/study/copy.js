@@ -15,11 +15,16 @@ function shallowCopy(src) {
     return target
 }
 
+// 考虑正则、日期、DOM节点等等
 function deepCopy(src) {
     let target = Array.isArray(src) ? [] : {}
     for (let key in src) {
         if (src.hasOwnProperty(key)) {
-            if (typeof (src[key]) === 'object') {
+            if (src[key] instanceof Date) {
+                target[key] = new Date(src[key].getTime())
+            } else if (src[key] instanceof RegExp) {
+                target[key] = new RegExp(src[key])
+            } else if (typeof (src[key]) === 'object') {
                 target[key] = deepCopy(src[key])
             } else {
                 target[key] = src[key]

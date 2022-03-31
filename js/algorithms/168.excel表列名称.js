@@ -10,9 +10,13 @@
  * @return {string}
  */
 var convertToTitle = function(n) {
-    while (n > 26) {
-        
-    }
+  let res = []
+  while (n !== 0) {
+    n--
+    res.push(String.fromCharCode(n % 26 + 'A'.charCodeAt()))
+    n = Math.floor(n / 26)
+  }
+  return res.reverse().join('')
 };
 // @lc code=end
 
