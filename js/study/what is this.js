@@ -11,7 +11,8 @@ function bar() {
 var a = 2;
 function baz() {
   console.log("baz", this.a);
+  console.log("baz", a);
   bar();
 }
-let num = new Number(10);
+// let num = new Number(10);
 baz();
