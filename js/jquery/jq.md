@@ -8,7 +8,9 @@ $(document).ready(function () {
     // jq代码
 })
 $(function () {})
+
 // 类似onload，onload是所有资源加载完成,jq ready是DOM加载完成后执行
+
 window.onload = function () {
     // 执行代码
 }
