@@ -11,15 +11,20 @@
  * @return {boolean}
  */
 var containsNearbyDuplicate = function(nums, k) {
-  return nums.some((n, i) => {
-    let len = nums.length > (i + k) ? (i + k) : nums.length
-    for (let j = i + 1; j < i + len; j++) {
-      if (n == nums[j]) {
-        return true
-      }
+  if (nums.length < 2) return false;
+  let duplicate = false;
+  const len = nums.length;
+  for(let i = 0; i < len - 1; i++) {
+    // console.log(nums.slice(i + 1));
+    let newArr = nums.slice(i + 1)
+    // console.log(nums.slice(i + 1));
+    const nextIndex = newArr.indexOf(nums[i]);
+    if (nextIndex !== -1 && nextIndex < k) {
+      duplicate = true;
+      break;
     }
-    return false
-  })
+  }
+  return duplicate;
 };
 // console.log(containsNearbyDuplicate([1,2,3,1,2,3], 2))
 // @lc code=end
