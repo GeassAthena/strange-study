@@ -11,21 +11,21 @@
  * @return {boolean}
  */
 var containsNearbyDuplicate = function(nums, k) {
-  if (nums.length < 2) return false;
   let duplicate = false;
   const len = nums.length;
-  for(let i = 0; i < len - 1; i++) {
-    // console.log(nums.slice(i + 1));
-    let newArr = nums.slice(i + 1)
-    // console.log(nums.slice(i + 1));
-    const nextIndex = newArr.indexOf(nums[i]);
-    if (nextIndex !== -1 && nextIndex < k) {
+  const map = new Map();
+  map.set(nums[0], 0);
+  for(let i = 1; i < len; i++) {
+    let lastIndex = map.get(nums[i]);
+    if (lastIndex !== undefined && i - lastIndex <= k) {
       duplicate = true;
       break;
+    } else {
+      map.set(nums[i], i);
     }
   }
   return duplicate;
 };
-// console.log(containsNearbyDuplicate([1,2,3,1,2,3], 2))
+// containsNearbyDuplicate([1,2,3,1], 3);
 // @lc code=end
 
