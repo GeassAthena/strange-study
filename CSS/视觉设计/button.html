@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        background-image: linear-gradient(90deg, #04182c, #000c17, #04182c);
+      }
+      .container {
+        width: 300px;
+        height: 100px;
+        cursor: pointer;
+        position: relative;
+        color: #fff;
+        text-align: center;
+        font-size: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      button {
+        /* font-size: 36px; */
+        display: inline-block;
+        width: 160px;
+        height: 48px;
+        color: #fff;
+        font-size: 24px;
+        cursor: pointer;
+        border: none;
+      }
+      .linear-btn {
+        border-radius: 24px;
+        border-width: 0;
+        background-image: linear-gradient(90deg, #C635FE 50%, #35A2FD 0);
+        background-size: 200% 100%;
+        background-position: 100% 0;
+        transition: all 1s ease;
+      }
+      .linear-btn:hover {
+        background-position: 0 0;
+        /* background-image: linear-gradient(180deg, #35A2FD, #C635FE); */
+      }
+      .light-btn {
+        border: 1px solid #4CC9F0;
+        color: #4CC9F0;
+        background-color: transparent;
+      }
+      .light-btn:hover {
+        background-color: #4CC9F0;
+        color: #fff;
+        box-shadow: 10px 10px 99px 6px #4CC9F0
+      }
+      .border1-btn {
+        color: #4CC9F0;
+        background-color: transparent;
+        /* transition: border 1s ease; */
+        position: relative;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        border: 2px solid transparent;
+      }
+      .border1-btn::before {
+        box-sizing: border-box;
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 0;
+        border: 2px solid transparent;
+      }
+      .border1-btn:hover::before {
+        transition: width .2s ease-out, height .2S ease-out .2s;
+        width: 100%;
+        height: 100%;
+        border-top-color: #4CC9F0;
+        border-right-color: #4CC9F0;
+      }
+      .border1-btn::after {
+        box-sizing: border-box;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border: 2px solid transparent;
+      }
+      .border1-btn:hover::after {
+        transition: border-color 0s ease-out .4s, width .2s ease-out .4s, height .2S ease-out .6s;
+        width: 100%;
+        height: 100%;
+        border-bottom-color: #4CC9F0;
+        border-left-color: #4CC9F0;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button class="linear-btn">Button</button>
+    </div>
+    <div class="container">
+      <button class="light-btn">Button</button>
+    </div>
+    <div class="container">
+      <button class="border1-btn">Button</button>
+    </div>
+  </body>
+</html>
