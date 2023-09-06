@@ -44,4 +44,12 @@ console.log(b) // 1
 + 函数表达式不会被提升
 + 函数提升优先级最高，比变量提升更早
 
-### 5.原型链 
+### 5.基本数据类型
+
++ 原始数据类型 number string boolean null undefined symbol bigint
++ 引用数据类型 Object
+
+### 6.数组Array.from和Sread(...)展开运算符
+
++ Array.from 支持类数组和可迭代对象(即实现了iterator)
++ Sread展开运算符仅支持可迭代对象
